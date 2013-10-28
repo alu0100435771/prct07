@@ -11,7 +11,7 @@ class Fraccion
   end
 
   def to_f  #convierte la fraccion en numeros de punto flotante
-   "#{@numerador.to_f}/#{@denominador.to_f}"
+   @numerador.to_f / @denominador.to_f
   end
 
   def reducir(numerador, denominador)  # Devuelve el maximo comun divisor

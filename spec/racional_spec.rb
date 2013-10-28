@@ -31,9 +31,9 @@ describe Fraccion do
 		@b.to_s.should eq "3/3"
 	end
 
-	it "Debe mostrar la fraccion en formato float" do
-		@a.to_f.should eq "2.0/4.0"
-		@b.to_f.should eq "3.0/3.0"
+	it "Debe mostrar la fraccion en formato flotante" do
+		@a.to_f.should eq 0.5
+		@b.to_f.should eq 1.0
 	end
 
 	it "Debe comparar dos fracciones con ==" do
