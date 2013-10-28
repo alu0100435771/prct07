@@ -1,8 +1,5 @@
-#Practica 6 Lenguajes y Paradigmas de Programación
-#Yeray Hernández y Sergio Oramas
-
 class Fraccion
-
+  
   attr_accessor  :numerador, :denominador
     
   def initialize(numerador, denominador)
@@ -58,7 +55,7 @@ class Fraccion
     end
   end
 
-  def opuesto #Devuelve la fracción opuesta 
+  def -@ #Devuelve la fracción opuesta 
     if (@numerador < 0 and @denominador > 0) then
       x = @numerador *(-1)
       y = @denominador
@@ -73,7 +70,7 @@ class Fraccion
       x = @numerador *(-1)
       y = @denominador *(-1)
     end
-    return Fraccion.new(x,y).to_s
+    return Fraccion.new(x,y)
   end
 
   def + (frac) #Devuelve la suma de las fracciones
@@ -84,7 +81,7 @@ class Fraccion
       y = @denominador * frac.denominador
       x = ((y/@denominador) * @numerador) + ((y/frac.denominador) * frac.numerador)
     end
-    return Fraccion.new(x,y).simplificar.to_s
+    return Fraccion.new(x,y).simplificar
   end
 
   def - (frac) #Devuelve la resta de las fracciones
@@ -95,19 +92,19 @@ class Fraccion
       y = @denominador * frac.denominador
       x = ((y/@denominador) * @numerador) - ((y/frac.denominador) * frac.numerador)
     end
-    return Fraccion.new(x,y).simplificar.to_s
+    return Fraccion.new(x,y).simplificar
   end
 
   def *(frac) #Devuelve la multiplicacion de las fraciones
     numerador = @numerador * frac.numerador
     denominador = @denominador * frac.denominador
-    return Fraccion.new(numerador,denominador).simplificar.to_s
+    return Fraccion.new(numerador,denominador).simplificar
   end
 
   def /(frac) #Devuelve la división de las fracciones
     numerador = @numerador * frac.denominador
     denominador = @denominador * frac.numerador
-    return Fraccion.new(numerador, denominador)
+    return Fraccion.new(numerador, denominador).simplificar
   end
 
   def < (frac) #Si la fraccion es menor que la otra, devuelve true, sino false
@@ -142,10 +139,5 @@ class Fraccion
     end
   end 
   
-  def div(frac)
-    numerador = @numerador * frac.denominador
-    denominador = @denominador * frac.numerador
-    return Fraccion.new(numerador, denominador)
-  end
-
-end   
+end
+  

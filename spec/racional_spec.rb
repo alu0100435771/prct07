@@ -1,5 +1,5 @@
 require 'rspec'
-require './racional.rb'
+require './lib/racional.rb'
 
 describe Fraccion do
 	
@@ -9,7 +9,6 @@ describe Fraccion do
 		@c = Fraccion.new(2,4)
 		@d = Fraccion.new(-2,-6)
 		@e = Fraccion.new(-4,12)
-
 	end
 
 	it "Debe existir un numerador" do
@@ -23,18 +22,18 @@ describe Fraccion do
 	end
 
 	it "Debe estar en forma reducida" do
-		@a.simplificar.mostrar.should eq "1/2"
-		@b.simplificar.mostrar.should eq "1/1"
+		@a.simplificar.to_s.should eq "1/2"
+		@b.simplificar.to_s.should eq "1/1"
 	end
 
 	it "Debe mostrar la fraccion en la forma a/b" do
-		@a.mostrar.should eq "2/4"
-		@b.mostrar.should eq "3/3"
+		@a.to_s.should eq "2/4"
+		@b.to_s.should eq "3/3"
 	end
 
 	it "Debe mostrar la fraccion en formato float" do
-		@a.flotante.should eq "2.0/4.0"
-		@b.flotante.should eq "3.0/3.0"
+		@a.to_f.should eq "2.0/4.0"
+		@b.to_f.should eq "3.0/3.0"
 	end
 
 	it "Debe comparar dos fracciones con ==" do
@@ -53,25 +52,25 @@ describe Fraccion do
 	end
 
 	it "Debe calcular el opuesto" do
-	  @c.opuesto.should eq "-2/-4"
-	  @d.opuesto.should eq "2/6"
-	  @e.opuesto.should eq "4/12"
+	  @c.-@.to_s.should eq "-2/-4"
+	  @d.-@.to_s.should eq "2/6"
+	  @e.-@.to_s.should eq "4/12"
 	end
 
 	it "Debe calcular la suma de 2 fracciones" do
-	  (@a+@b).should eq "3/2"
+	  (@a+@b).to_s.should eq "3/2"
 	end
 	
 	it "Debe calcular la resta de 2 fracciones" do
-	  (@a-@b).should eq "-1/2"
+	  (@a-@b).to_s.should eq "-1/2"
 	end
 	
 	it "Debe calcular la multiplicacion de 2 fracciones" do
-	  (@a*@b).should eq "1/2"
+	  (@a*@b).to_s.should eq "1/2"
 	end
 	
         it "Debe calcular la division de 2 fracciones" do
-	  (@a/@b).should eq "6/12"
+	  (@a/@b).to_s.should eq "1/2"
 	end
 
 	it "Debe comparar si una fraccion es mayor que otra" do
@@ -91,6 +90,6 @@ describe Fraccion do
 	end
         
         it "Debe dar el recíproco de una divison" do
-         (@a.div(@b)).reciproco.should eq "12/6"  
+          (@a/@b).reciproco.to_s.should eq "2/1"    
         end
-
+end
