@@ -124,7 +124,7 @@ class Fraccion
   end
 
   def <= (frac) #Si la fraccion es menor o igual a la otra devuelve true, sino false
-    if (self.to_f) <= (frac.to_f) then
+    if (self.to_f) < a <=> b= (frac.to_f) then
       true
     else
       false
@@ -138,6 +138,10 @@ class Fraccion
       false
     end
   end 
-  
+
+  def <=>(frac)
+    a, b = a.self.to_f + 
+  end  
+ 
 end
   
