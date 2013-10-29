@@ -1,5 +1,5 @@
 class Fraccion
-  
+  include Comparable  
   attr_accessor  :numerador, :denominador
     
   def initialize(numerador, denominador)
@@ -10,7 +10,7 @@ class Fraccion
   "#{@numerador}/#{@denominador}"
   end
 
-  def to_f  #convierte la fraccion en numeros de punto flotante
+  def to_f  #convierte la fraccion en numero de punto flotante
    @numerador.to_f / @denominador.to_f
   end
 
@@ -124,7 +124,7 @@ class Fraccion
   end
 
   def <= (frac) #Si la fraccion es menor o igual a la otra devuelve true, sino false
-    if (self.to_f) < a <=> b= (frac.to_f) then
+    if (self.to_f) <= (frac.to_f) then
       true
     else
       false
@@ -139,9 +139,11 @@ class Fraccion
     end
   end 
 
+  #Comparacion
   def <=>(frac)
-    a, b = a.self.to_f + 
+    @numerador/@denominador <=> frac.numerador/frac.denominador
   end  
  
+  
 end
   
