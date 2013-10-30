@@ -89,7 +89,7 @@ describe Fraccion do
 	  (@a<=@c).should eq true
 	end
         
-        it "Debe dar el recíproco de una divison" do
+        it "Debe dar el reciproco de una divison" do
           (@a/@b).reciproco.to_s.should eq "2/1"    
         end
 end
