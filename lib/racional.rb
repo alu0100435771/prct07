@@ -106,7 +106,7 @@ class Fraccion
     denominador = @denominador * frac.numerador
     return Fraccion.new(numerador, denominador).simplificar
   end
-
+=begin
   def < (frac) #Si la fraccion es menor que la otra, devuelve true, sino false
     if self.to_f < frac.to_f
       return true
@@ -138,7 +138,7 @@ class Fraccion
       false
     end
   end 
-
+=end
   #Comparacion
   def <=>(frac)
     @numerador/@denominador <=> frac.numerador/frac.denominador
