@@ -1,6 +1,6 @@
 Practica 7: Lenguajes y Paradigmas de Programación
 
-image:https://travis-ci.org/alu0100435771/prct07.png?branch=master["Build Status", link="https://travis-ci.org/alu0100435771/prct07"]
+<img src="https://travis-ci.org/alu0100435771/prct07.png?branch=master" alt="Build Status" /> <---- Estado y acceso a travis.
 
 Yeray Hernandez Robayna
 Sergio Oramas Reyes
